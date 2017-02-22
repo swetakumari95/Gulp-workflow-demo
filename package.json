@@ -1,0 +1,29 @@
+{
+  "name": "gulp-start",
+  "version": "1.0.0",
+  "description": "gulp demo",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnUdacity/gulp-start.git"
+  },
+  "keywords": [
+    "gulp",
+    "demo"
+  ],
+  "author": "Sweta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohnUdacity/gulp-start/issues"
+  },
+  "homepage": "https://github.com/JohnUdacity/gulp-start#readme"
+}
