@@ -1,8 +1,9 @@
 var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
-	rename = require('gulp-rename')
-	minifyCSS = require('gulp-minify-css')
-	imagemin = require('gulp-imagemin');
+	rename = require('gulp-rename'),
+	minifyCSS = require('gulp-minify-css'),
+	imagemin = require('gulp-imagemin'),
+	imageResize = require('gulp-image-resize');
 
 gulp.task('scripts', function(){
 	gulp.src('js/*.js')
@@ -28,4 +29,15 @@ gulp.task('imagemin', function(){
 		.pipe(gulp.dest('dist/images'));
 });
 
-gulp.task('default', ['scripts', 'styles', 'imagemin', 'watch']);
+gulp.task('imageResize', function(){
+	gulp.src('images/lbtc.jpg')
+		.pipe(imageResize({
+			width: 100,
+			height: 100,
+			crop : true,
+			upscale : false
+		}))
+		.pipe(gulp.dest('dist'));
+});
+
+gulp.task('default', ['scripts', 'styles', 'imagemin', 'imageResize', 'watch']);
