@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	rename = require('gulp-rename')
-	minifyCSS = require('gulp-minify-css');
+	minifyCSS = require('gulp-minify-css')
+	imagemin = require('gulp-imagemin');
 
 gulp.task('scripts', function(){
 	gulp.src('js/*.js')
@@ -21,4 +22,10 @@ gulp.task('watch', function(){
 	gulp.watch('css/*.css', ['styles']);
 });
 
-gulp.task('default', ['scripts', 'styles', 'watch']);
+gulp.task('imagemin', function(){
+	gulp.src('images/lbtc.jpg')
+		.pipe(imagemin())
+		.pipe(gulp.dest('dist/images'));
+});
+
+gulp.task('default', ['scripts', 'styles', 'imagemin', 'watch']);
